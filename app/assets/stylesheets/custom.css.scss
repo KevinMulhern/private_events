@@ -1,0 +1,80 @@
+
+
+/* universal */
+
+* {
+	box-sizng: border-box;	
+}
+
+
+
+/* header */
+.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+#logo{
+	float: left;
+	font-size: 2em;
+	padding: 7px 0 10px 10px;
+	text-decoration: none;
+	color: #fff;
+}
+
+nav ul{
+	padding: 10px;
+	padding-right: 30px;
+}
+
+nav ul li a{
+	color: #fff;
+	&:hover{
+		color: #000;
+	}
+}
+
+
+
+/* footer */
+
+
+
+
+footer{
+    height: auto;
+    background-color: #2A2C2B;
+    color: #fff;
+}
+
+.contact{
+	line-height: 25px;
+
+}
+
+.contact ul li i{
+	color: #74CDE8;
+}
+
+.contact ul{
+	list-style-type: none;
+	padding-left: 0;
+	
+
+}
+
+.contact ul li{
+	color: #fff;
+	display: inline-block;
+	font-size: 24px;
+	padding-right: 10px;
+	
+}
+
+.contact h4{
+	font-size: 16px;
+}
+
+.copy{
+	padding-top: 50px;
+}

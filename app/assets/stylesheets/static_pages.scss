@@ -1,0 +1,57 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html, .fluid-container{
+	height: 100%;
+}
+
+
+ .fluid-container, .blur{
+	background: image-url('background_image.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.focus-container{
+	position: relative;
+}
+
+.blur{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-position: center;
+	z-index: 99;
+	-webkit-filter: blur(10px);
+}
+
+
+.focus-box{
+	position: relative;
+	border-radius: 10px;
+	height: 10%;
+	text-align: center;
+	padding: 40px;
+	background: rgba(34,34,34,0.75);
+	margin-top: 30%;
+	z-index: 100;
+
+}
+
+.focus-box h1{
+	padding-bottom: 30px;
+	color: white;
+}
+
+.focus-box a {
+	opacity: 0.9;
+}
+
+
+
+
+
+
