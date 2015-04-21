@@ -11,7 +11,6 @@
 
   <div class="field">
     <%= f.label :password %>
-    <span><%= link_to "(Forgot your password?)", new_password_path(resource_name) %></span>
     <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
 
   </div>
@@ -26,7 +25,7 @@
   <div class="actions">
     <%= f.submit "Log in", class: "form-control btn btn-success" %>
   </div>
-    <%= link_to "New user? Create an account", new_registration_path(resource_name), class: "signup-link" %><br />
+    <%= link_to "New user? Create an account", new_registration_path(resource_name), class: "form-link" %><br />
 <% end %>
 </div>
 </div>
