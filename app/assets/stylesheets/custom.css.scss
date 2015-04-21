@@ -6,6 +6,14 @@
 	box-sizng: border-box;	
 }
 
+body{
+	background-color: #f5f8fa;
+}
+
+h1,h2,h3,h5,h6{
+	text-align: center;
+}
+
 
 
 /* header */
@@ -35,16 +43,70 @@ nav ul li a{
 }
 
 
+/* Home page */
+
+body, html, .home{
+	height: 100%;
+}
+
+
+ .home, .blur{
+	background: image-url('background_image.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.focus-container{
+	position: relative;
+}
+
+.blur{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-position: center;
+	z-index: 99;
+	-webkit-filter: blur(10px);
+}
+
+
+.focus-box{
+	position: relative;
+	border-radius: 10px;
+	height: 10%;
+	text-align: center;
+	padding: 40px;
+	background: rgba(34,34,34,0.75);
+	margin-top: 30%;
+	z-index: 100;
+
+}
+
+.focus-box h1{
+	padding-bottom: 30px;
+	color: white;
+}
+
+
 
 /* footer */
-
-
+.fluid-container, body, html{
+	height: 100%;
+	min-height: 100%;
+}
 
 
 footer{
     height: auto;
+    width: 100%;
     background-color: #2A2C2B;
     color: #fff;
+     clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: -3em;
 }
 
 .contact{
@@ -78,3 +140,69 @@ footer{
 .copy{
 	padding-top: 50px;
 }
+
+
+/* forms */
+.well{
+	padding: 10px 30px 20px;
+	margin-top: 50px;
+}
+
+.form-control{
+	margin-bottom: 20px;
+}
+
+.well h2{
+	padding-bottom: 20px;
+}
+
+input[type="checkbox"]{
+	margin: 0 5px 20px 3px;
+}
+
+.signup-link{
+	width: 200px;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+/* flash messages */
+
+.alert-notice{
+	display: inline-block;
+	background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    width: 300px;
+ }
+
+ .alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+
+
+
+
+

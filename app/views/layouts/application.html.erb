@@ -3,16 +3,21 @@
 <head>
   <title>PrivateEvents</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag controller_name if controller_name == "StaticPages" && action_name == "home" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
+	<%= render 'layouts/header' %>
+		<% if home_page? %>
+			<div class="home fluid-container">
+		<% else %>
+			<div class="fluid-container">
+		<% end %>
+	<%= render 'layouts/messages' %>
 
-<%= yield %>
-
-<%= render 'layouts/footer' %>
+	<%= yield %>
+	</div>
+	<%= render 'layouts/footer' %>
 
 </body>
 </html>

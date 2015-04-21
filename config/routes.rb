@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  devise_for :users, controllers: { sessions: 'users/sessions'}
+  root :to => 'static_pages#home'
   get 'static_pages/about'
 
   # The priority is based upon order of creation: first created -> highest priority.

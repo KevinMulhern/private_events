@@ -1,13 +1,16 @@
-<div class="fluid-container">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<div class="focus-container">
 			<div class="blur"></div>
 			<div class="focus-box">
-				<h1>Sign up</h1>
-				<%= link_to "Sign up now!", '#', class: "btn btn-lg btn-success" %>
+				<% if signed_in? %>
+					<h1>Create an Event</h1>
+					<%= link_to "Create Event", '#', class: "btn btn-lg btn-success" %>
+				<% else %>
+					<h1>Sign up</h1>
+					<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-success" %>
+				<% end %>
 			</div>
 			</div>
 		</div>
 	</div>
-</div>
