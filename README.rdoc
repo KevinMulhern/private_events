@@ -1,3 +1,5 @@
 # Private Events
 
-This project is a clone of [eventbrite](https://www.eventbrite.com/) Users can signup and create events that other users can attend. They can also attend other users events.
+Private events is an events creation website where users can create events and other users can choose to attend them or not.
+
+online Demo here: https://rocky-journey-2739.herokuapp.com/
