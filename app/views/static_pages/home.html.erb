@@ -5,7 +5,7 @@
 			<div class="focus-box">
 				<% if signed_in? %>
 					<h1>Create an Event</h1>
-					<%= link_to "Create Event", '#', class: "btn btn-lg btn-success" %>
+					<%= link_to "Create Event", new_event_path, class: "btn btn-lg btn-success" %>
 				<% else %>
 					<h1>Sign up</h1>
 					<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-success" %>

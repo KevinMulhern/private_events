@@ -16,6 +16,7 @@ h1,h2,h3,h5,h6{
 
 .fluid-container{
 	position: relative;
+	height: 100%;
 }
 
 
@@ -182,7 +183,7 @@ input[type="checkbox"]{
 .alert{
 	position: absolute;
 	top: 5px;
-	left: 5px;
+	left: 39%;
 	width: 300px;
 }
 
@@ -243,6 +244,78 @@ section.well{
 margin-top: 10px;
 	display: block;
 }
+
+
+
+/* create event page */
+
+.create-bottom{
+	border-top: 1px solid #e1e8ed;
+}
+
+.create-bottom .col-sm-4{
+	padding-top: 30px;
+}
+.create-button{
+	vertical-align: middle;
+}
+
+
+/* event index */
+
+.event-index{
+	margin-top: 80px;
+}
+
+
+.event-box{
+	background-color: #fff;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #e1e8ed;
+	padding: 10px;
+}
+
+.event-heading{
+	border-bottom: 1px solid #e1e8ed;
+	text-align: left;
+	padding-left: 0.5em;
+}
+
+.event-content{
+	padding: 0.5em;
+}
+
+.event-content p{
+	color: #999;
+}
+
+.event-content h5{
+	text-align: left;
+	font-weight: bold;
+}
+
+.icon {
+	padding-right: 5px;
+}
+
+.event-content ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.event-content ul li i{
+	padding-bottom: 0.8em;
+	
+}
+
+.filters{
+	margin-top: 5%;
+}
+
+
+
+
 
 
 
