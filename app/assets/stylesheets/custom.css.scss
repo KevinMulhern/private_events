@@ -183,7 +183,7 @@ input[type="checkbox"]{
 .alert{
 	position: absolute;
 	top: 5px;
-	left: 39%;
+	left: 5px;
 	width: 300px;
 }
 
@@ -310,9 +310,20 @@ margin-top: 10px;
 }
 
 .filters{
-	margin-top: 5%;
+	margin-top: 5
 }
 
+
+/* show event page */
+
+.show-event{
+	margin-top: 60px;
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #e1e8ed;
+	padding: 10px;
+
+}
 
 
 
