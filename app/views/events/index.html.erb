@@ -10,7 +10,7 @@
 	
 <div class="event-index row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<% @upcoming.each do |event| %>
+		<% @events.each do |event| %>
 			<a href="<%= event_path(event.id)%>">
 			<section class="event-box">
 				<div class="event-heading">
