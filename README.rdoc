@@ -1,3 +1,0 @@
-# Private Events
-
-This project is a clone of [eventbrite](https://www.eventbrite.com/) Users can signup and create events that other users can attend. They can also attend other users events.
