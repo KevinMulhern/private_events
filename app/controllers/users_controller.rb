@@ -26,6 +26,11 @@ class UsersController < ApplicationController
     	end
 	end	
 
+	def my_events
+		@user_host = current_user.events
+		@user_guest = current_user.invites
+	end
+
 
 
 	private

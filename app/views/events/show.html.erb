@@ -19,3 +19,19 @@
 		</div>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-sm-2 col-sm-offset-4">
+	<% if @event.guests.include?(current_user) %>
+		<%= form_for(current_user.invites.find_by(event_id: @event.id), :html => { method: :delete }) do |f| %>
+			<%= f.submit "Leave event", class: "form-control btn btn-danger" %>
+		<% end %>
+
+	<% else %>
+		<%= form_for(current_user.invites.build(event_id: @event.id)) do |f| %>
+			<%= f.hidden_field :event_id, :value => @event.id %>
+			<%= f.submit "Attend Event", class: "form-control btn btn-success" %>
+		<% end %> 
+	<% end %>
+	</div>
+</div>
