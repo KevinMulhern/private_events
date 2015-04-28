@@ -1,5 +1,5 @@
 class Invite < ActiveRecord::Base
-	belongs_to :event
+	belongs_to :attended_event, :class_name => "Event"
 	belongs_to :guest, :class_name => "User"
 
 	validates :guest_id, presence: true

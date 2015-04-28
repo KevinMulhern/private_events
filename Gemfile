@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
+gem 'has_scope'
 
 
 

@@ -15,23 +15,50 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+	</div>
+
+	<% if user_signed_in? && current_user != @event.host %>
+		<div class="col-sm-2">
+			<div class="attend-box">
+				<% if @event.guests.include?(current_user) %>
+					<%= form_for(current_user.invites.find_by(event_id: @event.id), :html => { method: :delete }) do |f| %>
+						<%= f.submit "Leave event", class: "form-control btn btn-danger" %>
+					<% end %>
+
+				<% else %>
+					<%= form_for(current_user.invites.build(event_id: @event.id)) do |f| %>
+						<%= f.hidden_field :event_id, :value => @event.id %>
+						<%= f.submit "Attend Event", class: "form-control btn btn-success" %>
+					<% end %> 
+				<% end %>
 			</div>
+		</div>
+	<% end %>
+
+</div>
+
+
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h3 class="attending-head"><i class="fa fa-list"></i>Users Attending</h3>
+		<% @guests.each do |guest| %>
+			<ul>
+				<li><%= guest.name %></li>
+			</ul>
+		<% end %>
+	</div>
+</div>
+
+<% if @event.host == current_user%>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-3">
+		<div class="event-edit-box">
+			<%= link_to "Edit Event", edit_event_path, class: "col-sm-3 col-sm-offset-2 btn btn-primary" %>
+			<%= link_to "Delete event", @event, method: :delete, data: { confirm: "You sure?" }, class: "col-sm-3 btn btn-danger" %>
+			
 		</div>
 	</div>
 </div>
-
-<div class="row">
-	<div class="col-sm-2 col-sm-offset-4">
-	<% if @event.guests.include?(current_user) %>
-		<%= form_for(current_user.invites.find_by(event_id: @event.id), :html => { method: :delete }) do |f| %>
-			<%= f.submit "Leave event", class: "form-control btn btn-danger" %>
-		<% end %>
-
-	<% else %>
-		<%= form_for(current_user.invites.build(event_id: @event.id)) do |f| %>
-			<%= f.hidden_field :event_id, :value => @event.id %>
-			<%= f.submit "Attend Event", class: "form-control btn btn-success" %>
-		<% end %> 
-	<% end %>
-	</div>
-</div>
+<% end %>

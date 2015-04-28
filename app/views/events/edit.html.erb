@@ -1,9 +1,8 @@
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-2">
 		<div class="well well-lg">
-			<h2>Create a New Event</h2>
+			<h2>Edit Event</h2>
 			<%= form_for(@event) do |f| %>
-				<%= render 'shared/error_messages', object: f.object %>
 
 				<%= f.label :title %>
 				<%= f.text_field :title, class: "form-control", autofocus: true %>
@@ -19,19 +18,19 @@
 
 					<%= f.label "Date" %>
 					<div class="input-group date">
-						<%= f.text_field :eventDate, class: "form-control" %><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						<%= f.text_field :eventDate, :value => @event.eventDate.strftime("%d/%m/%Y"), class: "form-control" %><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 					</div>
 					</div>
 
 					<div class="col-sm-4 col-sm-offset-1">
 						<%= f.label "Start Time" %>
-						<%= f.text_field :startTime, class: "time ui-timepicker-input form-control", placeholder: "15:00" %>
+						<%= f.text_field :startTime, :value => @event.startTime.strftime("%H:%M"), class: "time ui-timepicker-input form-control"%>
 					</div>
 				</div>
 
 				<div class="row create-bottom">
 					<div class="col-sm-4 col-sm-offset-4">
-					<%= f.submit "Create event", class: "form-control btn btn-success create-button"%>
+					<%= f.submit "Save Changes", class: "form-control btn btn-success create-button"%>
 						
 					</div>
 					

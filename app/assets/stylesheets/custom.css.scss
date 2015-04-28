@@ -264,7 +264,7 @@ margin-top: 10px;
 /* event index */
 
 .event-index{
-	margin-top: 80px;
+	margin-top: 20px;
 }
 
 
@@ -309,9 +309,16 @@ margin-top: 10px;
 	
 }
 
-.filters{
-	margin-top: 5
+div.filters{
+	padding-top: 20px;
+	margin-top: 0;
 }
+
+.filters h2{
+	padding-bottom: 50px;
+}
+
+
 
 
 /* show event page */
@@ -324,6 +331,31 @@ margin-top: 10px;
 	padding: 10px;
 
 }
+
+.attend-box{
+	margin-top: 60px;
+	background-color: #fff;
+	padding: 20px 15px 20px 15px;
+	border-radius: 5px;
+	border: 1px solid #e1e8ed;
+}
+
+.attend-box input{
+	margin: 0;
+}
+
+.attending-head{
+	border-bottom: 1px solid #e1e8ed;
+	line-height: 1.5em;
+	font-style: bold;
+}
+
+.attending-head i{
+	padding-right: 10px;
+	font-size: 0.8em;
+}
+
+
 
 
 

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+	has_scope :upcoming
+	has_scope :past
+	has_scope :created_events
+
 	def show
 		@user = User.find(current_user.id)
 	end
@@ -27,10 +31,13 @@ class UsersController < ApplicationController
 	end	
 
 	def my_events
-		@user_host = current_user.events
-		@user_guest = current_user.invites
+		if params[:request] || request.fullpath == '/user_events'
+			@events = current_user.events
+		else
+		@events = apply_scopes(Event).all
 	end
-
+		
+	end
 
 
 	private
