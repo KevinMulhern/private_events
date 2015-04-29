@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
-	has_scope :past
-	has_scope :upcoming
+	#has_scope :past
+	#has_scope :upcoming
 
 	def my_events
 		if params[:request] || request.fullpath == '/user_events'
