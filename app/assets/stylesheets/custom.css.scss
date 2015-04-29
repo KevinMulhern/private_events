@@ -19,7 +19,9 @@ h1,h2,h3,h5,h6{
 	height: 100%;
 }
 
-
+.fluid-container .row:first-child{
+	margin-right: 0;
+}
 
 /* header */
 .navbar {
@@ -42,9 +44,14 @@ nav ul{
 
 nav ul li a{
 	color: #fff;
+	font-size: 16px;
 	&:hover{
 		color: #000;
 	}
+}
+
+.fa-home:before, .fa-list-alt:before, .fa-info:before, .fa-user:before, .fa-sign-in:before, .fa-plus:before{
+	padding-right: 4px;
 }
 
 
@@ -52,6 +59,7 @@ nav ul li a{
 
 body, html, .home{
 	height: 100%;
+	margin-right: 0px;
 }
 
 .home {
@@ -147,6 +155,10 @@ footer{
 
 .copy{
 	padding-top: 50px;
+}
+
+.about{
+	padding-top: 30px;
 }
 
 
@@ -250,6 +262,7 @@ margin-top: 10px;
 /* create event page */
 
 .create-bottom{
+	margin-top: 20px;
 	border-top: 1px solid #e1e8ed;
 }
 
@@ -290,6 +303,8 @@ margin-top: 10px;
 	color: #999;
 }
 
+
+
 .event-content h5{
 	text-align: left;
 	font-weight: bold;
@@ -309,13 +324,19 @@ margin-top: 10px;
 	
 }
 
-div.filters{
-	padding-top: 20px;
-	margin-top: 0;
+
+.filter{
+	margin-top: 40px;
+	margin-right: 15px;
 }
 
-.filters h2{
-	padding-bottom: 50px;
+.btn-group a:first-child {
+	border-right: 1px solid #000;
+	
+}
+
+.event-index {
+	margin-right: 0;
 }
 
 
@@ -353,6 +374,20 @@ div.filters{
 .attending-head i{
 	padding-right: 10px;
 	font-size: 0.8em;
+}
+
+.btn-primary{
+	display: block;
+}
+
+.guest-list{
+	font-size: 16px;
+	list-style-type: circle;
+}
+
+/* my events */
+.my-events-filter a:nth-child(2){
+	border-right: 1px solid #000;
 }
 
 

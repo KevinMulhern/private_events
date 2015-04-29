@@ -1,16 +1,18 @@
-<%= link_to "Upcoming Events", user_events_path(:upcoming => true) %>
-<%= link_to "past Events", user_events_path(:past => true) %>
-<%= link_to "Created Events", user_events_path(:request => 'host') %>
+<div class="filter row">
+	<div class="col-sm-4 col-sm-offset-3">
+		<div class=" my-events-filter btn-group btn-group-justified">
+			<%= link_to "Upcoming Events", user_events_path(:upcoming => true), class: "btn btn-info btn-sm" %>
+			<%= link_to "Past Events", user_events_path(:past => true), class: "btn btn-info btn-sm" %>
+			<%= link_to "Created Events", user_events_path(:request => 'host'), class: "btn btn-info btn-sm" %>
+		</div>
+	</div>
+</div>
 
-<div class="row">
+<div class="event-index row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<h1>Created Events</h1>
-		<% @events.each do |event| %>
-			<ul>
-				<li><%= event.title %></li>
-			</ul>
-		<% end %>
+		
+		<%= render 'events/event_box' %>
+		<%= will_paginate @events, renderer: BootstrapPagination::Rails %>
 		
 	</div>
-	
 </div>

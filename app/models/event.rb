@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :host, class_name: 'User'
 	has_many :guests, through: :invites
-	has_many :invites
+	has_many :invites, :foreign_key => 'attended_event_id'
 
 
 	validates :title, presence: true, length: { maximum: 40 }

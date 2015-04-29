@@ -32,10 +32,10 @@ class UsersController < ApplicationController
 
 	def my_events
 		if params[:request] || request.fullpath == '/user_events'
-			@events = current_user.events
+			@events = current_user.events.paginate(page: params[:page],:per_page => 6)
 		else
-		@events = apply_scopes(Event).all
-	end
+			@events = apply_scopes(current_user.attended_events).paginate(page: params[:page],:per_page => 6)
+		end
 		
 	end
 

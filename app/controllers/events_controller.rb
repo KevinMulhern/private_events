@@ -5,9 +5,9 @@ class EventsController < ApplicationController
 
 	def index
 		if request.fullpath == '/events'
-			@events = Event.all.order('eventDate DESC')
+			@events = Event.all.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
 		else
-		 @events = apply_scopes(Event).all
+		 @events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
 		end
 
 	end
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 		@event = current_user.events.new(event_params())
 		if @event.save
 			flash[:notice] = "Event Created"
-			redirect_to root_url
+			redirect_to @event
 		else
 			render 'new'
 		end
@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
 	def destroy
 		Event.find(params[:id]).destroy
-		flash[:success] = "Event Deleted"
+		flash[:notice] = "Event Deleted"
     	redirect_to events_path
 	end
 
