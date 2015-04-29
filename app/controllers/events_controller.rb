@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
 	def index
 		if request.fullpath == '/events'
-			@events = Event.all.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
+			@events = Event.all.order("event_date DESC").paginate(page: params[:page], :per_page => 6)
 		else
 			@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
 			
@@ -55,6 +55,6 @@ class EventsController < ApplicationController
 	private
 
 	  def event_params
-		params.require(:event).permit(:title, :description, :location, :eventDate, :startTime)
+		params.require(:event).permit(:title, :description, :location, :event_date, :start_time)
 	  end
 end

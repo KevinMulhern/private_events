@@ -16,6 +16,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
 gem 'has_scope'
 gem 'will_paginate-bootstrap'
+gem 'pg'
 
 
 
@@ -23,10 +24,8 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
 end
 
 group :production do 
-  gem 'pg'
 end
 
