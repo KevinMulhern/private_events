@@ -1,67 +1,58 @@
+<% provide(:title, "Edit") %>
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <section class="well">
-      <div class="main-header">
+
+      <div class="main-header row">
         <h2>Account</h2>
         <h4>Change your account settings</h4>
       </div>
-      <div class="main-edit-content">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
-          <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <%= f.label "Name:", class: "col-sm-3 control-label" %>
-              <div class="col-sm-6">
-               <%= f.text_field :name, class: "form-control" %>
-              </div>
-          </div>
+      <div class="row">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
-        <div class="form-group">
-          <%= f.label "Email:", class: "col-sm-3 control-label" %>
-          <div class="col-sm-6">
-            <%= f.email_field :email, class: "form-control" %>
-          </div>
-        </div>
-      <h4 class="change-password">Change Password</h4>
+            <div class="field">
+              <%= f.label "Name:" %><br />
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
 
-      <div class="form-group">
-        <%= f.label "Current Password:", class: "col-sm-3 control-label" %>
-          <div class="col-sm-6">
-          <%= f.password_field :current_password, class: "form-control" %>
-        </div>
+            <div class="field">
+              <%= f.label "Email:" %><br />
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
       </div>
 
-      <div class="form-group">
-        <%= f.label "New Password:", class: "col-sm-3 control-label" %>
-        <div class="col-sm-6">
-         <%= f.password_field :password, class: "form-control" %>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label "Confirm Password:", class: "col-sm-3 control-label" %>
-      <div class="col-sm-6">
+      <div class="row">
+        <h4 class="change-password">Change Password</h4>
+
+        <%= f.label "Current Password:" %>
+        <%= f.password_field :current_password, class: "form-control" %>
+
+        <%= f.label "New Password:"%>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label "Confirm Password:" %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
+   
+        <div class="save-setting col-sm-6 col-sm-offset-3">
+          <%= f.submit "Save changes", class: "form-control btn btn-success" %>
         </div>
       </div>
+      <% end %>
 
-  <div class="form-group">
-    <div class="col-sm-4 col-sm-offset-4">
-      <%= f.submit "Save changes", class: "form-control btn btn-success" %>
-    </div>
-  </div>
-  </div>
-  <% end %>
+      <div class="row">
+        <h4 class="danger-zone">Danger Zone!</h4>
+          <div class="col-sm-6 col-sm-offset-3">
+            <%= button_to "Cancel my Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "form-control btn btn-danger" %>
+          </div>
+      </div>
 
-  <h4 class="danger-zone">Danger Zone!</h4>
-  <div class=" delete-button form-group">
-    <div class="col-sm-4 col-sm-offset-4">
-      <%= button_to "Cancel my Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "form-control btn btn-danger" %>
-    </div>
-    </div>
-</section>
+    </section>
+  </div>
 </div>
-</div>
+
 
 
 

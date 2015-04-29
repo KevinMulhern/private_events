@@ -1,3 +1,4 @@
+<% provide(:title, @event.title) %>
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 		<div class="show-event">
@@ -21,7 +22,7 @@
 
 	
 		<div class="col-sm-2">
-			<div class="attend-box">
+		<div class="attend-box">
 			<% if user_signed_in? && current_user != @event.host %>
 				<% if @event.guests.include?(current_user) %>
 					<%= form_for(current_user.invites.find_by(attended_event_id: @event.id), :html => { method: :delete }) do |f| %>

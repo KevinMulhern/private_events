@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	has_scope :upcoming
 	has_scope :past
@@ -7,9 +8,8 @@ class EventsController < ApplicationController
 		if request.fullpath == '/events'
 			@events = Event.all.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
 		else
-		 @events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
+		 	@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
 		end
-
 	end
 
 	def show
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		@event = current_user.events.new(event_params())
+		@event = current_user.events.new(event_params)
 		if @event.save
 			flash[:notice] = "Event Created"
 			redirect_to @event
@@ -51,10 +51,9 @@ class EventsController < ApplicationController
     	redirect_to events_path
 	end
 
-
 	private
 
-	def event_params
+	  def event_params
 		params.require(:event).permit(:title, :description, :location, :eventDate, :startTime)
-	end
+	  end
 end

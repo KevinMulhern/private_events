@@ -1,6 +1,7 @@
 
-
-/* universal */
+/*================
+  	universal 
+================ */
 
 * {
 	box-sizng: border-box;	
@@ -23,7 +24,12 @@ h1,h2,h3,h5,h6{
 	margin-right: 0;
 }
 
-/* header */
+
+
+/* ================
+      header
+================*/
+
 .navbar {
 	border-radius: 0;
 	margin-bottom: 0;
@@ -55,7 +61,9 @@ nav ul li a{
 }
 
 
-/* Home page */
+/*================
+     Home page 
+================*/
 
 body, html, .home{
 	height: 100%;
@@ -106,8 +114,10 @@ body, html, .home{
 }
 
 
+/*==============
+    footer 
+==============*/
 
-/* footer */
 .fluid-container, body, html{
 	height: 100%;
 	min-height: 100%;
@@ -161,8 +171,18 @@ footer{
 	padding-top: 30px;
 }
 
+/*=============
+    forms 
+=============*/
 
-/* forms */
+#error_explanation {
+	color: red;
+	ul {
+		color: red;
+		margin: 0 0 30px 0;
+	}
+}
+
 .well{
 	padding: 10px 30px 20px;
 	margin-top: 100px;
@@ -189,8 +209,9 @@ input[type="checkbox"]{
 }
 
 
-
-/* flash messages */
+/*===================
+  flash messages
+====================*/
 
 .alert{
 	position: absolute;
@@ -199,8 +220,6 @@ input[type="checkbox"]{
 	width: 300px;
 }
 
-
-
 .alert-success {
     background-color: #dff0d8;
     border-color: #d6e9c6;
@@ -208,12 +227,9 @@ input[type="checkbox"]{
     text-align: left;
  }
 
-
- /* edit user */
-
-.main{
-	background-color: #fff;
-}
+/*================
+    edit user
+================*/
  .well h4{
  	text-align: center;
  }
@@ -221,35 +237,15 @@ input[type="checkbox"]{
 .main-header{
 	border-bottom:1px solid #e1e8ed;
 }
-section.well{
-	padding: 0;
-	padding-bottom: 70px;
-}
-
-.form-group{
-	font-size: 13px;
-}
-
-.main-edit-content{
-	padding-bottom: 20px;
-}
-
-.control-label{
-	padding-right: 20px;
-}
-
-.form-horizontal:first-child{
-	padding-top: 20px;
-}
 
 .change-password{
 	border-bottom: 1px solid #e1e8ed;
-	padding-bottom: 20px;
+	padding-bottom: 2%;
 }
 
 .danger-zone{
 	border-bottom: 1px solid #e1e8ed;
-	padding-bottom: 20px;
+	padding-bottom: 2%;
 }
 
 .btn-danger{
@@ -257,10 +253,15 @@ margin-top: 10px;
 	display: block;
 }
 
+.save-setting{
+	margin-top: 2%;
+	margin-bottom: 5%;
+}
 
 
-/* create event page */
-
+/*======================
+   create event page
+======================*/
 .create-bottom{
 	margin-top: 20px;
 	border-top: 1px solid #e1e8ed;
@@ -273,8 +274,9 @@ margin-top: 10px;
 	vertical-align: middle;
 }
 
-
-/* event index */
+/*=============
+  event index 
+=============*/
 
 .event-index{
 	margin-top: 20px;
@@ -303,8 +305,6 @@ margin-top: 10px;
 	color: #999;
 }
 
-
-
 .event-content h5{
 	text-align: left;
 	font-weight: bold;
@@ -324,7 +324,6 @@ margin-top: 10px;
 	
 }
 
-
 .filter{
 	margin-top: 40px;
 	margin-right: 15px;
@@ -341,9 +340,9 @@ margin-top: 10px;
 
 
 
-
-/* show event page */
-
+/*===================
+   show event page
+====================*/
 .show-event{
 	margin-top: 60px;
 	background-color: #fff;
@@ -390,6 +389,13 @@ margin-top: 10px;
 	border-right: 1px solid #000;
 }
 
+/*=====================
+      About Page
+======================*/
+
+.about p{
+	font-size: 1.2em;
+}
 
 
 
