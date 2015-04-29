@@ -1,15 +1,15 @@
 class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-	#has_scope :upcoming
-	#has_scope :past
+	has_scope :upcoming
+	has_scope :past
 
 	def index
 		if request.fullpath == '/events'
 			@events = Event.all.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
 		else
 			puts request.fullpath
-		 	#@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
+		 	@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
 		end
 	end
 
