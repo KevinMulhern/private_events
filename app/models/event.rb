@@ -10,6 +10,6 @@ class Event < ActiveRecord::Base
 	validates :eventDate, presence: true
 	validates :startTime, presence: true
 
-	scope :upcoming, -> { where("eventDate >= ?", Date.today).order('eventDate ASC') }
+	scope :upcoming, -> eventDate { where("eventDate >= ?", Date.today).order('eventDate ASC') }
 	scope :past, -> eventDate { where("eventDate < ?", Date.today).order('eventDate DESC') }
 end

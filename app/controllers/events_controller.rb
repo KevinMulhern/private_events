@@ -7,8 +7,9 @@ class EventsController < ApplicationController
 	def index
 		if request.fullpath == '/events'
 			@events = Event.all.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
-		elsif request.fullpath == '/events?upcoming=true'
-			@events = Event.upcoming.order('eventDate DESC').paginate(page: params[:page], :per_page => 6)
+		else
+			@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
+			
 		end
 	end
 
