@@ -2,4 +2,6 @@
 
 Private events is an events creation website where users can create events and other users can choose to attend them or not.
 
-online Demo here: https://rocky-journey-2739.herokuapp.com/
+This project was built with Rails 4.2 for the backend and the bootstrap Flatly theme for the front end.
+
+online Demo here: https://protected-island-9117.herokuapp.com/events?page=2&past=true
