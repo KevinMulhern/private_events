@@ -15,7 +15,8 @@ gem 'devise'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
 gem 'has_scope'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate',            '3.0.7'
+gem 'bootstrap-will_paginate',  '0.0.10'
 gem 'pg'
 
 

@@ -167,9 +167,6 @@ footer{
 	padding-top: 50px;
 }
 
-.about{
-	padding-top: 30px;
-}
 
 /*=============
     forms 
@@ -384,7 +381,16 @@ margin-top: 10px;
 	list-style-type: circle;
 }
 
-/* my events */
+.event-over{
+	color: red;
+}
+
+
+
+/*===============
+      my events 
+=================*/
+
 .my-events-filter a:nth-child(2){
 	border-right: 1px solid #000;
 }

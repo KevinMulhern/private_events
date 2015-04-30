@@ -24,16 +24,18 @@
 		<div class="col-sm-2">
 		<div class="attend-box">
 			<% if user_signed_in? && current_user != @event.host %>
-				<% if @event.guests.include?(current_user) %>
+				<% if @event.event_date < Date.today %>
+					<p class="event-over">This event has finished.</p>
+				<% elsif @event.guests.include?(current_user) %>
 					<%= form_for(current_user.invites.find_by(attended_event_id: @event.id), :html => { method: :delete }) do |f| %>
 						<%= f.submit "Leave event", class: "form-control btn btn-danger" %>
 					<% end %>
-
 				<% else %>
 					<%= form_for(current_user.invites.build(attended_event_id: @event.id)) do |f| %>
 						<%= f.hidden_field :attended_event_id, :value => @event.id %>
 						<%= f.submit "Attend Event", class: "form-control btn btn-success" %>
 					<% end %> 
+					
 				<% end %>
 			<% elsif @event.host == current_user %>
 				<%= link_to "Edit Event", edit_event_path, class: "btn btn-primary" %>

@@ -5,11 +5,10 @@ class EventsController < ApplicationController
 	has_scope :past
 
 	def index
-		if request.fullpath == '/events'
-			@events = Event.all.order("event_date DESC").paginate(page: params[:page], :per_page => 6)
+		if request.fullpath.include?('upcoming=true') || request.fullpath.include?('past=true')
+			@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 5)
 		else
-			@events = apply_scopes(Event).all.paginate(page: params[:page], :per_page => 6)
-			
+			@events = Event.order("event_date DESC").paginate(page: params[:page], :per_page => 5)
 		end
 	end
 
